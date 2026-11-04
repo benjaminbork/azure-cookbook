@@ -1,0 +1,14 @@
+name: cosmos-keyless-managed-identity
+metadata:
+  template: cosmos-keyless-managed-identity@0.0.1
+
+infra:
+  provider: bicep
+  path: infra
+  module: main
+
+services:
+  api:
+    project: ./src/KeylessCosmos.Api
+    language: dotnet
+    host: appservice

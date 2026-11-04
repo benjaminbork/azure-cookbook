@@ -1,0 +1,10 @@
+bin/
+obj/
+*.user
+.vs/
+node_modules/
+publish/
+*.zip
+appsettings.Local.json
+
+.azure/

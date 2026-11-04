@@ -1,0 +1,35 @@
+@baseUrl = http://localhost:5125
+
+###
+GET {{baseUrl}}/health
+
+###
+GET {{baseUrl}}/health/cosmos
+
+###
+GET {{baseUrl}}/todos
+
+###
+# @name create
+POST {{baseUrl}}/todos
+Content-Type: application/json
+
+{
+  "title": "Remove the last connection string",
+  "isComplete": false
+}
+
+###
+GET {{baseUrl}}/todos/{{create.response.body.$.id}}
+
+###
+PUT {{baseUrl}}/todos/{{create.response.body.$.id}}
+Content-Type: application/json
+
+{
+  "title": "Remove the last connection string",
+  "isComplete": true
+}
+
+###
+DELETE {{baseUrl}}/todos/{{create.response.body.$.id}}
